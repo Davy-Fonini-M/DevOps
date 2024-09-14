@@ -1,0 +1,8 @@
+FROM rust:alpine
+COPY . /app
+WORKDIR /app
+RUN apk add --no-cache alpine-sdk
+RUN cargo build --release
+CMD [ "/app/target/release/Devops" ]
+#docker build -t hello .
+#docker run -p 3000:3000 hello
